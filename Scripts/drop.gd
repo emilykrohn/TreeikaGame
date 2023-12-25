@@ -6,11 +6,10 @@ var trees = [preload("res://Scenes/Game/Trees/tree_1.tscn"), preload("res://Scen
 var spawn_cooldown := true
 
 func spawn_tree():
-	if spawn_cooldown:
+	if spawn_cooldown and Input.is_action_just_pressed("ui_select"):
 		var tree = trees[randi() % trees.size()].instantiate()
 		tree.global_position = $"../drop_point".global_position
 		$"../../../../".add_child(tree)
-		print("Spawn")
 		spawn_cooldown = false
 
 func _on_timer_timeout():
