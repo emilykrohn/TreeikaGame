@@ -5,14 +5,15 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wn6e2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ut10s"]
-radius = 21.182
-height = 138.0
+radius = 12.2165
+height = 59.9448
 
 [node name="Tree2" type="RigidBody2D"]
 rotation = -0.0876322
 physics_material_override = SubResource("PhysicsMaterial_wn6e2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_g7lyf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
