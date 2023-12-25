@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://b843nssrx4566"]
+[gd_scene load_steps=12 format=3 uid="uid://b843nssrx4566"]
 
 [ext_resource type="Texture2D" uid="uid://dutwy36a4555e" path="res://Art/WhiteCat.png" id="1_o8owq"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_rlybi"]
 [ext_resource type="Script" path="res://Scripts/Movement.gd" id="3_dtoc3"]
+[ext_resource type="Script" path="res://Scripts/animation.gd" id="4_juc6e"]
 [ext_resource type="Script" path="res://Scripts/drop.gd" id="4_tbglk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f0cev"]
@@ -55,6 +56,7 @@ collision_mask = 0
 script = ExtResource("1_rlybi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_apt1o")
 animation = &"idle"
@@ -65,6 +67,9 @@ shape = SubResource("RectangleShape2D_uscc4")
 
 [node name="movement" type="Node" parent="."]
 script = ExtResource("3_dtoc3")
+
+[node name="animation" type="Node" parent="."]
+script = ExtResource("4_juc6e")
 
 [node name="drop_point" type="Node2D" parent="."]
 position = Vector2(-75, 0)
