@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://b843nssrx4566"]
+[gd_scene load_steps=9 format=3 uid="uid://b843nssrx4566"]
 
 [ext_resource type="Texture2D" uid="uid://dutwy36a4555e" path="res://Art/WhiteCat.png" id="1_o8owq"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_rlybi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f0cev"]
 atlas = ExtResource("1_o8owq")
@@ -47,6 +48,7 @@ animations = [{
 size = Vector2(59, 69)
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_rlybi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3, 3)
