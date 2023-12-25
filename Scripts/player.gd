@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const SPEED := 10
-var can_move := true
+var can_move := false
 var can_drop := true
 
 func _physics_process(_delta):
@@ -12,6 +12,10 @@ func _physics_process(_delta):
 		$drop.drop_tree()
 	if can_move:
 		$movement.move(SPEED)
+		if $movement.is_moving:
+			$animation.walk()
+	if not $movement.is_moving:
+		$animation.idle()
 
 func _on_move_cooldown_timeout():
 	can_move = true
