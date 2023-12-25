@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://b843nssrx4566"]
+[gd_scene load_steps=11 format=3 uid="uid://b843nssrx4566"]
 
 [ext_resource type="Texture2D" uid="uid://dutwy36a4555e" path="res://Art/WhiteCat.png" id="1_o8owq"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_rlybi"]
 [ext_resource type="Script" path="res://Scripts/Movement.gd" id="3_dtoc3"]
+[ext_resource type="Script" path="res://Scripts/drop.gd" id="4_tbglk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f0cev"]
 atlas = ExtResource("1_o8owq")
@@ -62,3 +63,15 @@ shape = SubResource("RectangleShape2D_uscc4")
 
 [node name="movement" type="Node" parent="."]
 script = ExtResource("3_dtoc3")
+
+[node name="drop_point" type="Node2D" parent="."]
+position = Vector2(-75, 0)
+
+[node name="drop" type="Node" parent="."]
+script = ExtResource("4_tbglk")
+
+[node name="Timer" type="Timer" parent="drop"]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="drop/Timer" to="drop" method="_on_timer_timeout"]
