@@ -75,4 +75,9 @@ script = ExtResource("4_tbglk")
 [node name="Timer" type="Timer" parent="drop"]
 autostart = true
 
+[node name="move_cooldown" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
 [connection signal="timeout" from="drop/Timer" to="drop" method="_on_timer_timeout"]
+[connection signal="timeout" from="move_cooldown" to="." method="_on_move_cooldown_timeout"]
