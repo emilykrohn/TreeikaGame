@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://m3lc0rbpvwcn"]
+
+[ext_resource type="Texture2D" uid="uid://crqllfdwvw77m" path="res://Art/Tree1.png" id="1_22g0u"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wn6e2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ut10s"]
+radius = 13.0
+height = 138.0
+
+[node name="Tree1" type="RigidBody2D"]
+rotation = -0.0876322
+physics_material_override = SubResource("PhysicsMaterial_wn6e2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_22g0u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ut10s")
