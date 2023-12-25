@@ -5,14 +5,14 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wn6e2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2736k"]
-radius = 34.2053
+radius = 31.257
 
 [node name="Tree3" type="RigidBody2D"]
 rotation = -0.0876322
 physics_material_override = SubResource("PhysicsMaterial_wn6e2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_qre55")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
