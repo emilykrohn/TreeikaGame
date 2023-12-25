@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bj5gg7ur6emvd"]
+[gd_scene load_steps=4 format=3 uid="uid://bj5gg7ur6emvd"]
 
 [ext_resource type="PackedScene" uid="uid://bqita6qe5geld" path="res://Scenes/Game/container.tscn" id="1_7wxyp"]
 [ext_resource type="Texture2D" uid="uid://ddodhjtk6cblk" path="res://Art/Tree11.png" id="2_q6g34"]
+
+[sub_resource type="Curve2D" id="Curve2D_o1x24"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 329.23, 65, 0, 0, 0, 0, 797.029, 64)
+}
+point_count = 2
 
 [node name="main" type="Node"]
 
@@ -92,5 +98,14 @@ size_flags_vertical = 4
 texture = ExtResource("2_q6g34")
 expand_mode = 4
 stretch_mode = 5
+
+[node name="Path2D" type="Path2D" parent="game"]
+position = Vector2(41.8159, -3.8147e-06)
+scale = Vector2(0.951264, 1)
+curve = SubResource("Curve2D_o1x24")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="game/Path2D"]
+position = Vector2(329.23, 65)
+rotation = -0.00213767
 
 [node name="title_screen" type="Node2D" parent="."]
