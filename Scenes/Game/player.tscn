@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b843nssrx4566"]
+[gd_scene load_steps=10 format=3 uid="uid://b843nssrx4566"]
 
 [ext_resource type="Texture2D" uid="uid://dutwy36a4555e" path="res://Art/WhiteCat.png" id="1_o8owq"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_rlybi"]
+[ext_resource type="Script" path="res://Scripts/Movement.gd" id="3_dtoc3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f0cev"]
 atlas = ExtResource("1_o8owq")
@@ -58,3 +59,6 @@ animation = &"idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-14.5, 13.5)
 shape = SubResource("RectangleShape2D_uscc4")
+
+[node name="Movement" type="Node" parent="."]
+script = ExtResource("3_dtoc3")
