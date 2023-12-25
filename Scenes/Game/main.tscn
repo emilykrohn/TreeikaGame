@@ -8,7 +8,7 @@
 [node name="game" type="Node2D" parent="."]
 
 [node name="container" parent="game" instance=ExtResource("1_7wxyp")]
-position = Vector2(23, 40)
+position = Vector2(23, 56)
 
 [node name="ui" type="Control" parent="game"]
 layout_mode = 3
