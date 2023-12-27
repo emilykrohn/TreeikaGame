@@ -77,7 +77,7 @@ position = Vector2(-75, 0)
 [node name="drop" type="Node" parent="."]
 script = ExtResource("4_tbglk")
 
-[node name="Timer" type="Timer" parent="drop"]
+[node name="Timer2" type="Timer" parent="drop"]
 autostart = true
 
 [node name="move_cooldown" type="Timer" parent="."]
@@ -87,6 +87,11 @@ autostart = true
 [node name="input_cooldown" type="Timer" parent="."]
 autostart = true
 
-[connection signal="timeout" from="drop/Timer" to="drop" method="_on_timer_timeout"]
+[node name="spawn_cooldown" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+
+[connection signal="timeout" from="drop/Timer2" to="drop" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="move_cooldown" to="." method="_on_move_cooldown_timeout"]
 [connection signal="timeout" from="input_cooldown" to="." method="_on_input_cooldown_timeout"]
+[connection signal="timeout" from="spawn_cooldown" to="." method="_on_spawn_cooldown_timeout"]
