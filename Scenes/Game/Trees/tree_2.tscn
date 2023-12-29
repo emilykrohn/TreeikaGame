@@ -10,7 +10,7 @@ radius = 12.2165
 height = 59.9448
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4r0m0"]
-size = Vector2(30.8732, 59.932)
+size = Vector2(30.3225, 64.2795)
 
 [node name="Tree2" type="RigidBody2D"]
 rotation = -0.0876322
@@ -27,7 +27,7 @@ shape = SubResource("CapsuleShape2D_ut10s")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.0437603, -0.498081)
+position = Vector2(0.319126, -0.31664)
 shape = SubResource("RectangleShape2D_4r0m0")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
