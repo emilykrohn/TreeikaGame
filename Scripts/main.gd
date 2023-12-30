@@ -13,9 +13,10 @@ func combine_trees():
 	$PopSound.play()
 	
 func _on_restart_pressed():
+	$ButtonSound.play()
 	get_tree().reload_current_scene()
 
-
 func _on_button_pressed():
+	$ButtonSound.play()
 	$title_screen.visible = false
 	$game.visible = true

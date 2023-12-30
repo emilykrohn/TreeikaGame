@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bj5gg7ur6emvd"]
+[gd_scene load_steps=13 format=3 uid="uid://bj5gg7ur6emvd"]
 
 [ext_resource type="PackedScene" uid="uid://bqita6qe5geld" path="res://Scenes/Game/container.tscn" id="1_7wxyp"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_u6wn2"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b843nssrx4566" path="res://Scenes/Game/player.tscn" id="3_oqjgf"]
 [ext_resource type="Script" path="res://Scripts/Label2.gd" id="3_owsbp"]
 [ext_resource type="AudioStream" uid="uid://2kbvqtcdky67" path="res://SoundsAndMusic/Minimalist8.mp3" id="6_img0k"]
+[ext_resource type="AudioStream" uid="uid://bp7yjiq4y5hgh" path="res://SoundsAndMusic/Minimalist1.mp3" id="6_si8os"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_reeph"]
 size = Vector2(586, 463)
@@ -225,6 +226,10 @@ shape = SubResource("RectangleShape2D_vfnh1")
 [node name="PopSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_img0k")
 volume_db = 15.0
+
+[node name="ButtonSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_si8os")
+volume_db = 10.0
 
 [connection signal="pressed" from="title_screen/Panel/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="game_over_screen/Panel/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
