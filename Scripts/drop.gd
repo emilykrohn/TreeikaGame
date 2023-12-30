@@ -1,6 +1,7 @@
 extends Node
 
-var trees = [preload("res://Scenes/Game/Trees/tree_4.tscn")]
+var trees = [preload("res://Scenes/Game/Trees/tree_1.tscn"), preload("res://Scenes/Game/Trees/tree_2.tscn"),
+			 preload("res://Scenes/Game/Trees/tree_3.tscn"), preload("res://Scenes/Game/Trees/tree_4.tscn")]
 
 var has_dropped := true
 var can_change_tree := false
@@ -10,7 +11,14 @@ var tree
 func spawn_tree():
 	if has_dropped:
 		tree = trees[randi() % trees.size()].instantiate()
-		tree.add_to_group("tree4")
+		if tree.name == "Tree1":
+			tree.add_to_group("tree1")
+		elif tree.name == "Tree2":
+			tree.add_to_group("tree2")
+		elif tree.name == "Tree3":
+			tree.add_to_group("tree3")
+		elif tree.name == "Tree4":
+			tree.add_to_group("tree4")
 		tree.freeze = true
 		tree.lock_rotation = true
 		tree.global_position = $"../drop_point".global_position
