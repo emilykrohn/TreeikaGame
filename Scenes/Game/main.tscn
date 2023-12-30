@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bj5gg7ur6emvd"]
+[gd_scene load_steps=14 format=3 uid="uid://bj5gg7ur6emvd"]
 
 [ext_resource type="PackedScene" uid="uid://bqita6qe5geld" path="res://Scenes/Game/container.tscn" id="1_7wxyp"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_u6wn2"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/Label2.gd" id="3_owsbp"]
 [ext_resource type="AudioStream" uid="uid://2kbvqtcdky67" path="res://SoundsAndMusic/Minimalist8.mp3" id="6_img0k"]
 [ext_resource type="AudioStream" uid="uid://bp7yjiq4y5hgh" path="res://SoundsAndMusic/Minimalist1.mp3" id="6_si8os"]
+[ext_resource type="AudioStream" uid="uid://c71scgaa8mit5" path="res://SoundsAndMusic/beanfeast.mp3" id="8_1g6ds"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_reeph"]
 size = Vector2(586, 463)
@@ -225,11 +226,16 @@ shape = SubResource("RectangleShape2D_vfnh1")
 
 [node name="PopSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_img0k")
-volume_db = 15.0
+volume_db = 24.0
 
 [node name="ButtonSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_si8os")
-volume_db = 10.0
+volume_db = 20.0
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_1g6ds")
+volume_db = -10.0
 
 [connection signal="pressed" from="title_screen/Panel/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="game_over_screen/Panel/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="finished" from="Music" to="." method="_on_music_finished"]
