@@ -15,6 +15,8 @@ size = Vector2(30.3225, 64.2795)
 [node name="Tree2" type="RigidBody2D"]
 rotation = -0.0876322
 physics_material_override = SubResource("PhysicsMaterial_wn6e2")
+max_contacts_reported = 20
+contact_monitor = true
 script = ExtResource("1_6vyyj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

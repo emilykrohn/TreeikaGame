@@ -14,6 +14,8 @@ radius = 44.1814
 [node name="Tree4" type="RigidBody2D"]
 rotation = -0.0876322
 physics_material_override = SubResource("PhysicsMaterial_wn6e2")
+max_contacts_reported = 20
+contact_monitor = true
 script = ExtResource("1_2ko5l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

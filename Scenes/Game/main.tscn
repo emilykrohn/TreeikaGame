@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b843nssrx4566" path="res://Scenes/Game/player.tscn" id="3_oqjgf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_reeph"]
-size = Vector2(586, 477)
+size = Vector2(586, 463)
 
 [sub_resource type="Curve2D" id="Curve2D_o1x24"]
 _data = {
@@ -18,10 +18,10 @@ point_count = 2
 size = Vector2(1153, 155)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cb4on"]
-size = Vector2(274, 609)
+size = Vector2(258, 340)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vfnh1"]
-size = Vector2(265, 605)
+size = Vector2(239, 313)
 
 [node name="main" type="Node"]
 script = ExtResource("1_u6wn2")
@@ -35,7 +35,7 @@ position = Vector2(23, 56)
 [node name="combine_area" type="Area2D" parent="game"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="game/combine_area"]
-position = Vector2(580, 390.5)
+position = Vector2(580, 397.5)
 shape = SubResource("RectangleShape2D_reeph")
 
 [node name="ui" type="Control" parent="game"]
@@ -127,7 +127,7 @@ scale = Vector2(0.951264, 1)
 curve = SubResource("Curve2D_o1x24")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="game/Path2D"]
-position = Vector2(380.55, 24)
+position = Vector2(380.546, 64)
 rotation = 0.00188742
 rotates = false
 loop = false
@@ -143,11 +143,11 @@ position = Vector2(576.5, 74.5)
 shape = SubResource("RectangleShape2D_ehdb4")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="game/OutOfBounds"]
-position = Vector2(147, 294.5)
+position = Vector2(142, 160)
 shape = SubResource("RectangleShape2D_cb4on")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="game/OutOfBounds"]
-position = Vector2(1020.5, 340.5)
+position = Vector2(1033.5, 194.5)
 shape = SubResource("RectangleShape2D_vfnh1")
 
 [node name="title_screen" type="Node2D" parent="."]
