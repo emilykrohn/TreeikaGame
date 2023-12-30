@@ -30,7 +30,7 @@ func drop_tree():
 		tree.lock_rotation = false
 		can_change_tree = false
 		has_dropped = true
-		is_tree = false
+		is_tree = false 
 
 func _on_timer_2_timeout():
 	can_change_tree = true
