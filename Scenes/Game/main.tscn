@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bj5gg7ur6emvd"]
+[gd_scene load_steps=12 format=3 uid="uid://bj5gg7ur6emvd"]
 
 [ext_resource type="PackedScene" uid="uid://bqita6qe5geld" path="res://Scenes/Game/container.tscn" id="1_7wxyp"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_u6wn2"]
 [ext_resource type="Texture2D" uid="uid://ddodhjtk6cblk" path="res://Art/Tree11.png" id="2_q6g34"]
 [ext_resource type="PackedScene" uid="uid://b843nssrx4566" path="res://Scenes/Game/player.tscn" id="3_oqjgf"]
 [ext_resource type="Script" path="res://Scripts/Label2.gd" id="3_owsbp"]
+[ext_resource type="AudioStream" uid="uid://2kbvqtcdky67" path="res://SoundsAndMusic/Minimalist8.mp3" id="6_img0k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_reeph"]
 size = Vector2(586, 463)
@@ -220,6 +221,10 @@ shape = SubResource("RectangleShape2D_cb4on")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="game/OutOfBounds"]
 position = Vector2(1033.5, 194.5)
 shape = SubResource("RectangleShape2D_vfnh1")
+
+[node name="PopSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_img0k")
+volume_db = 15.0
 
 [connection signal="pressed" from="title_screen/Panel/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="game_over_screen/Panel/VBoxContainer/Restart" to="." method="_on_restart_pressed"]

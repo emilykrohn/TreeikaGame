@@ -10,7 +10,7 @@ func _process(_delta):
 
 func combine_trees():
 	$game.add_child(tree)
-	OS.delay_msec(100)
+	$PopSound.play()
 	
 func _on_restart_pressed():
 	get_tree().reload_current_scene()
