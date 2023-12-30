@@ -1,12 +1,13 @@
 extends Node
 
-var count := 0
+var collision = false
 var tree
 
 func _process(_delta):
-	if count == 2:
+	if collision:
 		combine_trees()
-		count = 0
+		collision = false
 
 func combine_trees():
 	$game.add_child(tree)
+	OS.delay_msec(100)

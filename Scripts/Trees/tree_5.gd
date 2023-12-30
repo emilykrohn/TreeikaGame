@@ -8,7 +8,7 @@ func _on_area_2d_body_entered(body):
 		tree6.call_deferred("set_global_position", global_position)
 		tree6.add_to_group("tree6")
 		get_parent().get_parent().tree = tree6
-		get_parent().get_parent().count += 1
+		get_parent().get_parent().collision = true
 		body.queue_free()
 		queue_free()
 
