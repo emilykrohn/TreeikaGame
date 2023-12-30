@@ -19,10 +19,6 @@ max_contacts_reported = 20
 contact_monitor = true
 script = ExtResource("1_6vyyj")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_g7lyf")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_ut10s")
 
@@ -31,6 +27,11 @@ shape = SubResource("CapsuleShape2D_ut10s")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0.319126, -0.31664)
 shape = SubResource("RectangleShape2D_4r0m0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.3241, 0.258944, 1)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_g7lyf")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
