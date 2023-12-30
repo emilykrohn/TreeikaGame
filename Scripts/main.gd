@@ -14,3 +14,8 @@ func combine_trees():
 	
 func _on_restart_pressed():
 	get_tree().reload_current_scene()
+
+
+func _on_button_pressed():
+	$title_screen.visible = false
+	$game.visible = true
