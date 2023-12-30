@@ -18,4 +18,4 @@ func _on_area_2d_area_entered(area):
 		can_combine = true
 	if area.name == "OutOfBounds":
 		$"../../game_over_screen".visible = true
-		$"../../game".visible = false
+		$"../../".game_over = true

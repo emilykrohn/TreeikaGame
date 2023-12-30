@@ -1,6 +1,7 @@
 extends Node
 
 var collision = false
+var game_over = false
 var tree
 
 func _ready():
