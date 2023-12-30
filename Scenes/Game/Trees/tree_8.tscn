@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgvfm5x5tce3a"]
+[gd_scene load_steps=6 format=3 uid="uid://dgvfm5x5tce3a"]
 
 [ext_resource type="Texture2D" uid="uid://cjdxowxg55mhd" path="res://Art/Tree8.png" id="1_5jqhf"]
+[ext_resource type="Script" path="res://Scenes/Game/Trees/tree_8.gd" id="1_21fh0"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wn6e2"]
 
@@ -8,9 +9,14 @@
 radius = 71.6903
 height = 277.108
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xq8ek"]
+radius = 81.3018
+height = 304.934
+
 [node name="Tree8" type="RigidBody2D"]
 rotation = -0.0876322
 physics_material_override = SubResource("PhysicsMaterial_wn6e2")
+script = ExtResource("1_21fh0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.5, 1.5)
@@ -19,3 +25,11 @@ texture = ExtResource("1_5jqhf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.26256, 2.98849)
 shape = SubResource("CapsuleShape2D_k63j7")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_xq8ek")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwnn1a04qs5dl"]
+[gd_scene load_steps=6 format=3 uid="uid://bwnn1a04qs5dl"]
 
+[ext_resource type="Script" path="res://Scripts/Trees/tree_5.gd" id="1_atdir"]
 [ext_resource type="Texture2D" uid="uid://bs0u4kri0mkvw" path="res://Art/Tree5.png" id="1_ygcsw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wn6e2"]
@@ -7,9 +8,14 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_2736k"]
 radius = 68.0074
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_h0t0q"]
+radius = 76.7919
+
 [node name="Tree5" type="RigidBody2D"]
 rotation = -0.0876322
 physics_material_override = SubResource("PhysicsMaterial_wn6e2")
+contact_monitor = true
+script = ExtResource("1_atdir")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.6, 0.6)
@@ -17,3 +23,11 @@ texture = ExtResource("1_ygcsw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_2736k")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_h0t0q")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
