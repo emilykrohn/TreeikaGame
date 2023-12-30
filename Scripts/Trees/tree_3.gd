@@ -9,6 +9,7 @@ func _on_area_2d_body_entered(body):
 		tree4.add_to_group("tree4")
 		get_parent().get_parent().tree = tree4
 		get_parent().get_parent().collision = true
+		$"../ui/Panel/VBoxContainer/Label2".score += 3
 		body.queue_free()
 		queue_free()
 
