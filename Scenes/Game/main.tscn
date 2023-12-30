@@ -1,24 +1,101 @@
-[gd_scene load_steps=7 format=3 uid="uid://bj5gg7ur6emvd"]
+[gd_scene load_steps=11 format=3 uid="uid://bj5gg7ur6emvd"]
 
 [ext_resource type="PackedScene" uid="uid://bqita6qe5geld" path="res://Scenes/Game/container.tscn" id="1_7wxyp"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_u6wn2"]
 [ext_resource type="Texture2D" uid="uid://ddodhjtk6cblk" path="res://Art/Tree11.png" id="2_q6g34"]
 [ext_resource type="PackedScene" uid="uid://b843nssrx4566" path="res://Scenes/Game/player.tscn" id="3_oqjgf"]
+[ext_resource type="Script" path="res://Scripts/Label2.gd" id="3_owsbp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_reeph"]
-size = Vector2(586, 477)
+size = Vector2(586, 463)
 
 [sub_resource type="Curve2D" id="Curve2D_o1x24"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 379.689, 41, 0, 0, 0, 0, 879.025, 41)
+"points": PackedVector2Array(0, 0, 0, 0, 380.546, 64, 0, 0, 0, 0, 872.523, 64)
 }
 point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehdb4"]
+size = Vector2(1153, 155)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cb4on"]
+size = Vector2(258, 340)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vfnh1"]
+size = Vector2(239, 313)
 
 [node name="main" type="Node"]
 script = ExtResource("1_u6wn2")
 
+[node name="title_screen" type="Node2D" parent="."]
+
+[node name="Panel" type="Panel" parent="title_screen"]
+offset_right = 1154.0
+offset_bottom = 657.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="title_screen/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.5
+offset_top = -20.0
+offset_right = 53.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="title_screen/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "Treeika Game"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="title_screen/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Start"
+
+[node name="game_over_screen" type="Node2D" parent="."]
+visible = false
+z_index = 1
+
+[node name="Panel" type="Panel" parent="game_over_screen"]
+offset_right = 1156.0
+offset_bottom = 654.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="game_over_screen/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="game_over_screen/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="Restart" type="Button" parent="game_over_screen/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
 [node name="game" type="Node2D" parent="." groups=["tree1", "tree10", "tree11", "tree2", "tree3", "tree4", "tree5", "tree6", "tree7", "tree8", "tree9"]]
 unique_name_in_owner = true
+visible = false
 
 [node name="container" parent="game" instance=ExtResource("1_7wxyp")]
 position = Vector2(23, 56)
@@ -26,7 +103,7 @@ position = Vector2(23, 56)
 [node name="combine_area" type="Area2D" parent="game"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="game/combine_area"]
-position = Vector2(580, 390.5)
+position = Vector2(580, 397.5)
 shape = SubResource("RectangleShape2D_reeph")
 
 [node name="ui" type="Control" parent="game"]
@@ -59,13 +136,15 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="game/ui/Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "High Score:"
+text = "Score:"
+horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="game/ui/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 30
-text = "1000"
+text = "0"
+script = ExtResource("3_owsbp")
 
 [node name="Panel2" type="Panel" parent="game/ui"]
 layout_mode = 1
@@ -104,6 +183,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="TextureRect" type="TextureRect" parent="game/ui/Panel2/VBoxContainer/BoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -113,17 +193,33 @@ expand_mode = 4
 stretch_mode = 5
 
 [node name="Path2D" type="Path2D" parent="game"]
-position = Vector2(41.8159, -3.8147e-06)
+position = Vector2(42, 2)
 scale = Vector2(0.951264, 1)
 curve = SubResource("Curve2D_o1x24")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="game/Path2D"]
-position = Vector2(379.689, 41)
+position = Vector2(380.546, 64)
 rotation = 0.00188742
 rotates = false
 loop = false
 
 [node name="Player" parent="game/Path2D/PathFollow2D" instance=ExtResource("3_oqjgf")]
-position = Vector2(28.3832, 0.999996)
+position = Vector2(25.2971, 35.9523)
 
-[node name="title_screen" type="Node2D" parent="."]
+[node name="OutOfBounds" type="Area2D" parent="game"]
+position = Vector2(-7, -96)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="game/OutOfBounds"]
+position = Vector2(576.5, 74.5)
+shape = SubResource("RectangleShape2D_ehdb4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="game/OutOfBounds"]
+position = Vector2(142, 160)
+shape = SubResource("RectangleShape2D_cb4on")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="game/OutOfBounds"]
+position = Vector2(1033.5, 194.5)
+shape = SubResource("RectangleShape2D_vfnh1")
+
+[connection signal="pressed" from="title_screen/Panel/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="game_over_screen/Panel/VBoxContainer/Restart" to="." method="_on_restart_pressed"]

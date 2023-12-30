@@ -11,3 +11,11 @@ func _process(_delta):
 func combine_trees():
 	$game.add_child(tree)
 	OS.delay_msec(100)
+	
+func _on_restart_pressed():
+	get_tree().reload_current_scene()
+
+
+func _on_button_pressed():
+	$title_screen.visible = false
+	$game.visible = true

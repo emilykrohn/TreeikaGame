@@ -5,13 +5,13 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wn6e2"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k63j7"]
-radius = 56.5569
-height = 169.325
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2q012"]
 radius = 73.0031
 height = 213.704
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k63j7"]
+radius = 56.5569
+height = 169.325
 
 [node name="Tree6" type="RigidBody2D"]
 rotation = -0.0876322
@@ -19,20 +19,21 @@ physics_material_override = SubResource("PhysicsMaterial_wn6e2")
 contact_monitor = true
 script = ExtResource("1_futin")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("1_2nh5h")
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(10.9578, 0.962721)
+shape = SubResource("CapsuleShape2D_2q012")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8.61538, 4.77233)
 rotation = -0.077854
 shape = SubResource("CapsuleShape2D_k63j7")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(10.9578, 0.962721)
-shape = SubResource("CapsuleShape2D_2q012")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.627451, 0.45098, 0, 1)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_2nh5h")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

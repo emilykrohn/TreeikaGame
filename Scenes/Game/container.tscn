@@ -1,29 +1,29 @@
 [gd_scene load_steps=4 format=3 uid="uid://bqita6qe5geld"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fx1wd"]
-size = Vector2(12, 534)
+size = Vector2(10, 498)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_18gcl"]
 size = Vector2(597, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pholn"]
-size = Vector2(15, 522)
+size = Vector2(14, 490)
 
 [node name="container" type="StaticBody2D"]
 position = Vector2(33, 46)
 
 [node name="Line2D" type="Line2D" parent="."]
 position = Vector2(-43, -19)
-points = PackedVector2Array(304, 73, 305, 597, 894, 596, 895, 74)
+points = PackedVector2Array(305, 109, 305, 597, 894, 596, 894, 109)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(261, 320)
+position = Vector2(262, 338)
 shape = SubResource("RectangleShape2D_fx1wd")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(556.5, 577)
+position = Vector2(553, 576)
 shape = SubResource("RectangleShape2D_18gcl")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2(852.5, 315)
+position = Vector2(853, 331)
 shape = SubResource("RectangleShape2D_pholn")

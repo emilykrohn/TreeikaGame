@@ -9,9 +9,13 @@ func _on_area_2d_body_entered(body):
 		tree7.add_to_group("tree7")
 		get_parent().get_parent().tree = tree7
 		get_parent().get_parent().collision = true
+		$"../ui/Panel/VBoxContainer/Label2".score += 6
 		body.queue_free()
 		queue_free()
 
 func _on_area_2d_area_entered(area):
 	if area.name == "combine_area":
 		can_combine = true
+	if area.name == "OutOfBounds":
+		$"../../game_over_screen".visible = true
+		$"../../game".visible = false
