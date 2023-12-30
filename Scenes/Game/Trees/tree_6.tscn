@@ -16,6 +16,7 @@ height = 213.704
 [node name="Tree6" type="RigidBody2D"]
 rotation = -0.0876322
 physics_material_override = SubResource("PhysicsMaterial_wn6e2")
+contact_monitor = true
 script = ExtResource("1_futin")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

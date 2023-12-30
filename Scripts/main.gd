@@ -1,11 +1,12 @@
 extends Node
 
+var count := 0
+var tree
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
+	if count == 2:
+		combine_trees()
+		count = 0
+
+func combine_trees():
+	$game.add_child(tree)

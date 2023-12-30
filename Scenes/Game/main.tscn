@@ -6,18 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://b843nssrx4566" path="res://Scenes/Game/player.tscn" id="3_oqjgf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_reeph"]
-size = Vector2(586, 515)
+size = Vector2(586, 477)
 
 [sub_resource type="Curve2D" id="Curve2D_o1x24"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 363.92, 41, 0, 0, 0, 0, 879.025, 41)
+"points": PackedVector2Array(0, 0, 0, 0, 379.689, 41, 0, 0, 0, 0, 879.025, 41)
 }
 point_count = 2
 
 [node name="main" type="Node"]
 script = ExtResource("1_u6wn2")
 
-[node name="game" type="Node2D" parent="."]
+[node name="game" type="Node2D" parent="." groups=["tree1", "tree10", "tree11", "tree2", "tree3", "tree4", "tree5", "tree6", "tree7", "tree8", "tree9"]]
 unique_name_in_owner = true
 
 [node name="container" parent="game" instance=ExtResource("1_7wxyp")]
@@ -26,7 +26,7 @@ position = Vector2(23, 56)
 [node name="combine_area" type="Area2D" parent="game"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="game/combine_area"]
-position = Vector2(580, 371.5)
+position = Vector2(580, 390.5)
 shape = SubResource("RectangleShape2D_reeph")
 
 [node name="ui" type="Control" parent="game"]
@@ -118,7 +118,7 @@ scale = Vector2(0.951264, 1)
 curve = SubResource("Curve2D_o1x24")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="game/Path2D"]
-position = Vector2(363.92, 41)
+position = Vector2(379.689, 41)
 rotation = 0.00188742
 rotates = false
 loop = false

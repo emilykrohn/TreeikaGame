@@ -78,7 +78,8 @@ position = Vector2(-75, 0)
 script = ExtResource("4_tbglk")
 
 [node name="Timer2" type="Timer" parent="drop"]
-autostart = true
+wait_time = 0.5
+one_shot = true
 
 [node name="move_cooldown" type="Timer" parent="."]
 wait_time = 0.5
