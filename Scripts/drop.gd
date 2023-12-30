@@ -13,12 +13,16 @@ func spawn_tree():
 		tree = trees[randi() % trees.size()].instantiate()
 		if tree.name == "Tree1":
 			tree.add_to_group("tree1")
+			$"../../../../ui/Panel2/VBoxContainer/BoxContainer/TextureRect".texture = load("res://Art/Tree1.png")
 		elif tree.name == "Tree2":
 			tree.add_to_group("tree2")
+			$"../../../../ui/Panel2/VBoxContainer/BoxContainer/TextureRect".texture = load("res://Art/Tree2.png")
 		elif tree.name == "Tree3":
 			tree.add_to_group("tree3")
+			$"../../../../ui/Panel2/VBoxContainer/BoxContainer/TextureRect".texture = load("res://Art/Tree3.png")
 		elif tree.name == "Tree4":
 			tree.add_to_group("tree4")
+			$"../../../../ui/Panel2/VBoxContainer/BoxContainer/TextureRect".texture = load("res://Art/Tree4.png")
 		tree.freeze = true
 		tree.lock_rotation = true
 		tree.global_position = $"../drop_point".global_position

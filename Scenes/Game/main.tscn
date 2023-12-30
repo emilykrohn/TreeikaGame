@@ -68,13 +68,14 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="game/ui/Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "High Score:"
+text = "Score:"
+horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="game/ui/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 30
-text = "1000"
+text = "0"
 
 [node name="Panel2" type="Panel" parent="game/ui"]
 layout_mode = 1
@@ -113,6 +114,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="TextureRect" type="TextureRect" parent="game/ui/Panel2/VBoxContainer/BoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
 size_flags_horizontal = 4
