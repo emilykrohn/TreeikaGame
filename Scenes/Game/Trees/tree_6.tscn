@@ -31,7 +31,7 @@ rotation = -0.077854
 shape = SubResource("CapsuleShape2D_k63j7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.627451, 0.45098, 0, 1)
+modulate = Color(1, 0.839216, 0.556863, 1)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_2nh5h")
 
